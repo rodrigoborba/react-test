@@ -15,38 +15,44 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 	<script>
         
+        const NomeContext = React.createContext('nome');
+
         function MeuComponente1(){
-            const meuNome = 'Ayrton Teshima';
+            const MeuNome = 'Ayrton Teshima com Context API';
             return (
-                React.createElement('div', {className: 'componente-1'},
-                    React.createElement(MeuComponente2, {nome: meuNome})
+                React.createElement(NomeContext.Provider, {value: MeuNome},
+                    React.createElement('div', {className: 'componente-1'},
+                        React.createElement(MeuComponente2)
+                    )
                 )
             )
-
         }
 
-        function MeuComponente2(props){
+        function MeuComponente2(){
             return (
                 React.createElement('div', {className: 'componente-2'},
-                    React.createElement(MeuComponente3, {nome: props.nome})
+                    React.createElement(MeuComponente3)
                 )
             )
         }
 
-        function MeuComponente3(props){
+        function MeuComponente3(){
 
             return (
                 React.createElement('div', {className: 'componente-3'},
-                    React.createElement(MeuComponente4, {nome: props.nome})
+                    React.createElement(MeuComponente4)
                 )
             )
         }
 
-        function MeuComponente4(props){
-            
+        function MeuComponente4(){
             return (
-                React.createElement('div', {className: 'componente-4'},
-                    React.createElement('p', null, props.nome)
+                React.createElement(NomeContext.Consumer, null,
+                    (nomeContext)=>(
+                        React.createElement('div', {className: 'componente-4'},
+                            React.createElement('p', null, nomeContext)
+                        )
+                    )
                 )
             )
         }
