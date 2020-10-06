@@ -13,62 +13,7 @@
     </div>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-	<script>
-        
-        const NomeContext = React.createContext('nome');
-
-        function MeuComponente1(){
-            const MeuNome = 'Ayrton Teshima com Context API';
-            return (
-                React.createElement(NomeContext.Provider, {value: MeuNome},
-                    React.createElement('div', {className: 'componente-1'},
-                        React.createElement(MeuComponente2)
-                    )
-                )
-            )
-        }
-
-        function MeuComponente2(){
-            return (
-                React.createElement('div', {className: 'componente-2'},
-                    React.createElement(MeuComponente3)
-                )
-            )
-        }
-
-        function MeuComponente3(){
-
-            return (
-                React.createElement('div', {className: 'componente-3'},
-                    React.createElement(MeuComponente4)
-                )
-            )
-        }
-
-        function MeuComponente4(){
-            return (
-                React.createElement(NomeContext.Consumer, null,
-                    (nomeContext)=>(
-                        React.createElement('div', {className: 'componente-4'},
-                            React.createElement('p', null, nomeContext)
-                        )
-                    )
-                )
-            )
-        }
-
-        function MeuComponente(){
-            return React.createElement('div', null,
-                React.createElement(MeuComponente1)
-            )
-        }
-
-        ReactDOM.render(
-            React.createElement(MeuComponente),
-            document.getElementById('app')
-        )
-
-    </script> 
+	<script src="dist.js"></script> 
 
   </body>
 </html>
