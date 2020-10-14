@@ -18,7 +18,6 @@ function MeuComponente2(props){
                 <header>{props.children}</header>
                 <footer></footer>
             </div>
-            <MeuComponente3/>
         </div>
     )
 }
@@ -80,6 +79,11 @@ function MeuComponenteIrmao(props){
 }
 
 function MeuComponenteIrmao2(props){
+
+    React.useEffect(function(){
+        console.log('CRIOU OU ALTEROU');
+    });
+
     return (
         <h2>Contador: {props.contador} </h2>
     )

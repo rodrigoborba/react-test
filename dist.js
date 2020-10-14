@@ -12,7 +12,7 @@ function MeuComponente1(props) {
 function MeuComponente2(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: "componente-2"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("header", null, props.children), /*#__PURE__*/React.createElement("footer", null)), /*#__PURE__*/React.createElement(MeuComponente3, null));
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("header", null, props.children), /*#__PURE__*/React.createElement("footer", null)));
 }
 
 function MeuComponente3(props) {
@@ -71,11 +71,14 @@ function MeuComponenteIrmao(props) {
 }
 
 function MeuComponenteIrmao2(props) {
+  React.useEffect(function () {
+    console.log('CRIOU OU ALTEROU');
+  });
   return /*#__PURE__*/React.createElement("h2", null, "Contador: ", props.contador, " ");
 }
 
 function AppComponente() {
-  const [contador, incrementaContador] = React.useState(12);
+  const [contador, incrementaContador] = React.useState(1);
 
   const clickIncrementa = function () {
     incrementaContador(contador + 1);
