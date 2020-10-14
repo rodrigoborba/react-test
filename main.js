@@ -81,7 +81,8 @@ function MeuComponenteIrmao(props){
 function MeuComponenteIrmao2(props){
 
     React.useEffect(function(){
-        console.log('CRIOU OU ALTEROU');
+//        console.log('CRIOU OU ALTEROU');
+        localStorage.setItem('contador', props.contador);
     });
 
     return (
@@ -91,7 +92,8 @@ function MeuComponenteIrmao2(props){
 
 function AppComponente(){
 
-    const [ contador, incrementaContador] = React.useState(1);
+    const [ contador, incrementaContador] = 
+        React.useState(parseInt(localStorage.getItem('contador'), 10) || 0);
 
     const clickIncrementa = function(){
         incrementaContador(contador + 1)
