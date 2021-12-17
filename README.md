@@ -1,4 +1,3 @@
-Esse projeto é um app-modelo para o desenvolvimento de uma aplicação nos padrões do Banco do Nordeste.
 
 ## Scripts
 
